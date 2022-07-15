@@ -1,13 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
+import  { NextApiRequest, NextApiResponse } from 'next'
+import { stringify } from 'querystring'
 
-type Data = {
-  name: string
-}
+const Data = {name : stringify}
 
 export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
+  req,
+  res
 ) {
   res.status(200).json({ name: 'John Doe' })
 }
